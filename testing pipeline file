@@ -1,0 +1,30 @@
+Pipeline {
+agent any
+tools {
+
+}
+
+Stages {
+	Stage(‘GIT CHECKOUT’) {
+		Steps{
+
+		          }
+		}
+	Stage(‘compile’) {
+		Steps{
+			sh “mvn compile”
+		          }
+		}
+	Stage(‘test cod’) {
+		Steps{
+			sh “mvn test”
+		          }
+		}
+Stage(‘package’) {
+		Steps{
+			sh “mvn package”
+		          }
+		}
+
+}
+	}
