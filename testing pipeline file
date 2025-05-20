@@ -1,0 +1,36 @@
+pipeline {
+  agent any
+
+  tools {
+    // These names must match your Jenkins Global Tool Config
+    maven 'Java project'  //java project is already configured Maven in tools of jenkins web
+    jdk   'Java17'           // java17  is already configured java in tools of jenkins web
+   
+  }
+
+  stages {
+    stage('GIT CHECKOUT') {
+      steps {
+        git url: 'https://github.com/mothkanvinaykumar/JavaProjectJenkins.git'
+      }
+    }
+
+    stage('Compile') {
+      steps {
+        sh 'mvn compile'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+
+    stage('Package') {
+      steps {
+        sh 'mvn package'
+      }
+    }
+  }
+}
