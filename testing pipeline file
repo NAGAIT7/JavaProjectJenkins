@@ -3,8 +3,9 @@ pipeline {
 
   tools {
     // These names must match your Jenkins Global Tool Config
-    maven 'Maven_3.8.5'
-    jdk   'jdk11'
+    maven 'Java project'  //java project is already configured Maven in tools of jenkins web
+    jdk   'Java17'           // java17  is already configured java in tools of jenkins web
+   
   }
 
   stages {
