@@ -1,13 +1,14 @@
 Pipeline {
 agent any
 tools {
-
-}
+	tool name: 'Java project', type: 'maven'
+	tool name: 'Java Project', type: 'jdk'
+	}	
 
 Stages {
 	Stage(‘GIT CHECKOUT’) {
 		Steps{
-
+		git 'https://github.com/mothkanvinaykumar/JavaProjectJenkins.git'
 		          }
 		}
 	Stage(‘compile’) {
